@@ -1,14 +1,29 @@
 #!/usr/bin/python3
+import colorama
 
-banner = """
+RED = colorama.Fore.RED
+WHITE = colorama.Fore.WHITE
+GREY = colorama.Fore.LIGHTBLACK_EX
 
- ██████╗ ███╗   ██╗ █████╗ ████████╗██╗      ██████╗  ██████╗  ██████╗ ███████╗██████╗ 
- ██╔════╝ ████╗  ██║██╔══██╗╚══██╔══╝██║     ██╔═══██╗██╔════╝ ██╔════╝ ██╔════╝██╔══██╗
- ██║  ███╗██╔██╗ ██║███████║   ██║   ██║     ██║   ██║██║  ███╗██║  ███╗█████╗  ██████╔╝
- ██║   ██║██║╚██╗██║██╔══██║   ██║   ██║     ██║   ██║██║   ██║██║   ██║██╔══╝  ██╔══██╗
- ╚██████╔╝██║ ╚████║██║  ██║   ██║   ███████╗╚██████╔╝╚██████╔╝╚██████╔╝███████╗██║  ██║
-  ╚═════╝ ╚═╝  ╚═══╝╚═╝  ╚═╝   ╚═╝   ╚══════╝ ╚═════╝  ╚═════╝  ╚═════╝ ╚══════╝╚═╝  ╚═╝
-                                                                                         
+banner = f"""{colorama.Style.BRIGHT}
+{GREY}     ,,                ,,
+    (((((              )))))    t.me/{WHITE}UndeadSec{GREY}
+   ((((((              ))))))   youtube.com/c/{WHITE}UndeadSec{GREY} - BRAZIL
+   ((((((              ))))))   v1.0
+    ((((({WHITE},r@@@@@@@@@@e,{GREY})))))
+     ((({WHITE}@@@@@@@@@@@@@@@@{GREY})))
+      \{WHITE}@@/{RED},:::,{WHITE}\/{RED},:::,{WHITE}\@@{GREY}/{WHITE}
+     /@@@|{RED}:::::{WHITE}||{RED}:::::{WHITE}|@@@\\
+    / @@@\{RED}':::'{WHITE}/\{RED}':::'{WHITE}/@@@ \\
+   /  /@@@@@@@//\\@@@@@@@\  \\
+  (  /  '@@@@@====@@@@@'  \  )
+   \(     /          \     )/ 
+     \   (    {RED}GNAT{WHITE}    )   /
+          \  LOGGER  /
+
+{WHITE}    
+A PYTHON KEYLOGGER by Franklin Timoteo
+
 """
 
 import re
@@ -102,8 +117,8 @@ def menu(args):
             print('Params loaded: ')
             for key,value in params.items():
                 print('- %s : %s' %(key,value))
-            print('[S] Set new configs  [K] Generate file with new configs [C] Compile to exe [Q] Quit')
-            user_choice = input("Gnat-> ")
+            print(f'\n{RED}[{WHITE}S{RED}]{WHITE} Set new configs  {RED}[{WHITE}K{RED}]{WHITE} Generate file with new configs \n{RED}[{WHITE}C{RED}]{WHITE} Compile to exe   {RED}[{WHITE}Q{RED}]{WHITE} Quit')
+            user_choice = input(f"\n{RED}Gnat{WHITE}-> ")
             if user_choice.upper() == 'S':
                 sys.stdout.write('Setting new configs: ')
                 new_params = get_new_configs(params)
