@@ -1,3 +1,5 @@
+![Screenshot](https://github.com/UndeadSec/GnatLogger/blob/main/images/gnat.png)
+
 # GnatLogger
 
 ### How to install GnatLogger  
