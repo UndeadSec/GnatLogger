@@ -44,8 +44,8 @@ parser.add_argument('-t', '--to', help='set send to email')
 parser.add_argument('-d', '--debug', default='ERROR', help='Enable debug loggs, use DEBUG')
 parser.add_argument('-u', '--uid', help='uid telegram @myidbot')
 parser.add_argument('-k', '--token', help='token bot telegram')
-parser.add_argument('--enabletelegram', action='store_true', help='enable telegram as send form')
-parser.add_argument('--enableemail', action='store_true', help='enable email as send form')
+parser.add_argument('--enabletelegram', default=False, action='store_true', help='enable telegram as send form')
+parser.add_argument('--enableemail', default=False, action='store_true', help='enable email as send form')
 parser.add_argument('--force', default=False, action='store_true',help='disable interactive and force generate file')
 
 
@@ -154,7 +154,7 @@ def menu(args):
 if __name__ == '__main__':
     args = parser.parse_args()
     email, password, interval, to = args.email, args.password, args.interval, args.to
-    uid, token, enabletelegram, enableemail = args.uid, args.token, args.enabletelegram, args.enabletelegram
+    uid, token, enabletelegram, enableemail = args.uid, args.token, args.enabletelegram, args.enableemail
     fmt = "[%(levelname)s] %(funcName)s %(message)s"
     logging.basicConfig(format=fmt, encoding='utf-8', level=args.debug)
     logger.debug('Using args: %s' %args)
