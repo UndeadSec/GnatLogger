@@ -32,6 +32,7 @@ import logging
 import os
 import sys
 from time import sleep
+import PyInstaller.__main__
 
 logger = logging.getLogger(__name__)
 
@@ -117,7 +118,7 @@ def menu(args):
             print('Params loaded: ')
             for key,value in params.items():
                 print('- %s : %s' %(key,value))
-            print(f'\n{RED}[{WHITE}S{RED}]{WHITE} Set new configs  {RED}[{WHITE}K{RED}]{WHITE} Generate file with new configs \n{RED}[{WHITE}C{RED}]{WHITE} Compile to exe   {RED}[{WHITE}Q{RED}]{WHITE} Quit')
+            print(f'\n{RED}[{WHITE}S{RED}]{WHITE} Set new configs  {RED}[{WHITE}K{RED}]{WHITE} Generate file with new configs \n{RED}[{WHITE}C{RED}]{WHITE} Compile to exe   {RED}[{WHITE}D{RED}]{WHITE} Compile to exe with debug pyinstaller   \n{RED}[{WHITE}Q{RED}]{WHITE} Quit')
             user_choice = input(f"\n{RED}Gnat{WHITE}-> ")
             if user_choice.upper() == 'S':
                 sys.stdout.write('Setting new configs: ')
@@ -128,8 +129,18 @@ def menu(args):
                 _change_defaults_file(**params)
                 sleep(3) # @question: clean exec and we not see result from change_defaults
             elif user_choice.upper() == 'C':
-                ... # @todo: compile with pyinstaller and generate file exe
-                # @todo: options: qemu | winehq | virsh
+                PyInstaller.__main__.run([
+                    'main.py',
+                    '--onefile',
+                    ])
+            elif user_choice.upper() == 'D':
+                "Compile com debug pyinstaller"
+                PyInstaller.__main__.run([
+                    'main.py',
+                    '--onefile',
+                    '-d',
+                    'all'
+                    ])
             elif user_choice.upper() == 'Q':
                 raise KeyboardInterrupt
             else:
