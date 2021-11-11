@@ -64,7 +64,7 @@ def ScreenShot():
                        + string.digits) for _ in range(7))
     name = str(generate_name())
     pics_names.append(name+'.png')
-    pyautogui.screenshot().save(name + '.png')
+    pyautogui.screenshot(name + '.png')
     
 def Get_recently_active_windows():
     recently_windows = b''
