@@ -35,6 +35,15 @@ You can use the cli parameters for use in interactive mode
 
 Then finish setting the variables in interactive mode
 
+### Finally 
+
+Enter on interactive mode and compile the script telemetry.py using option `C`(without debug pyinstaller) or `D`(with debug pyinstaller)
+
+To debug, comment the line `Hide()`
+
+@TODO: Compile script to exe using cli
+
+
 ### Usage  
 
 ```
