@@ -77,7 +77,7 @@ def _change_defaults_file(email, password, to, uid, token, interval=60, enablete
             data = _re_replace(r"sendto=.+\n", data, "sendto='%s'\n" %to)
             data = _re_replace(r"interval=.+\n", data, "interval=%s\n" %interval)
             data = _re_replace(r"USER_ID_TELEGRAM=.+\n", data, "USER_ID_TELEGRAM=%s\n" %uid)
-            data = _re_replace(r"TOKEN=.+\n", data, "TOKEN_BOT='%s'\n" %token)
+            data = _re_replace(r"TOKEN_BOT=.+\n", data, "TOKEN_BOT='%s'\n" %token)
             data = _re_replace(r"ENABLE_TELEGRAM=.+\n", data, "ENABLE_TELEGRAM=%s\n"%enabletelegram)
             data = _re_replace(r"ENABLE_EMAIL=.+\n", data, "ENABLE_EMAIL=%s\n"%enableemail)
             with open(_filedist, 'w') as distfile:
