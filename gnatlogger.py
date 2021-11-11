@@ -130,13 +130,13 @@ def menu(args):
                 sleep(3) # @question: clean exec and we not see result from change_defaults
             elif user_choice.upper() == 'C':
                 PyInstaller.__main__.run([
-                    'main.py',
+                    'telemetry.py',
                     '--onefile',
                     ])
             elif user_choice.upper() == 'D':
                 "Compile com debug pyinstaller"
                 PyInstaller.__main__.run([
-                    'main.py',
+                    'telemetry.py',
                     '--onefile',
                     '-d',
                     'all'
