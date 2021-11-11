@@ -1,6 +1,7 @@
 altgraph==0.17.2
 certifi==2021.10.8
 charset-normalizer==2.0.7
+colorama==0.4.4
 future==0.18.2
 idna==3.3
 keyboard==0.13.5
